@@ -1,0 +1,47 @@
+html
+    head
+        link(rel='stylesheet', href='/css/styles.css')
+        script(src="/vendors/jquery.js")
+        script(src="/vendors/jquery.scrollTo.min.js")
+        script(src="/vendors/jquery.visible.min.js")
+        script(src="/socket.io/socket.io.js")
+        title ImageWall |
+            !=  title
+    body
+        div#imageWall
+            - each image in images
+                - var self = (image.owner == client)
+                if(self)
+                    div.image(data-client="#{image.owner}" data-self="true")
+                        if(image.filteredUrl)
+                            img(src=image.filteredUrl )
+                        else
+                            img(src=image.formatedUrl)
+                        if(image.message)
+                            p
+                                !=image.message
+                else
+                    div.image(data-client="#{image.owner}")
+
+                        if(image.filteredUrl)
+                            img(src=image.filteredUrl )
+                        else
+                            img(src=image.formatedUrl)
+                        if(image.message)
+                            p
+                                !=image.message
+
+
+        footer
+            a(href='add') Participer!
+            a(id="locate" href="#") Se repérer
+            a(id="fullscreen" href="#") Fullscreen
+
+    script.
+        var client= !{JSON.stringify(client)}
+        var images = !{JSON.stringify(images)}
+    script(src="/js/index.js")
+
+
+
+
