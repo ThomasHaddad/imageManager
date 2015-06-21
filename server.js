@@ -20,7 +20,7 @@ var async = require('async');
 
 
 // image module : covering saving,naming,filtering,cropping,resizing... everything
-var imageSaver = require('./imageSaver_module');
+var imageSaver = require('./imageManager_module');
 
 //configuring imageSaver.imageFormat
 imageSaver.imageFormat.setDirectoryPath('./public/uploads/');
