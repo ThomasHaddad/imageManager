@@ -1,6 +1,6 @@
 # ImageManager 
 
-ImageManager is a stack created to help store images with `imageSaver` module.
+ImageManager is a stack created to help store images with `imageManager` module.
 
 imageSaver is written on top of `gm`(https://github.com/aheckmann/gm) for maximum efficiency.
 
@@ -20,7 +20,7 @@ var app = express();
 
 ```
 
-You have to define first the required parameters of the `imageSaver` dependencies to fully use it:
+You have to define first the required parameters of the `imageManager` dependencies to fully use it:
 
 ```js
 //configuring imageSaver.imageFormat
@@ -88,7 +88,7 @@ This module allows you to apply some filters to an image. The following filters 
 For example : 
 ```js
 var imageName = "yourImageName"
-imageSaver.imageFormat.setSepiaImage(imageSaver.imageFormat.dirPath + imageSaver.nameManager.getFormatedName(imageName), imageSaver.nameManager.getFilteredName(imageName), function (err, data) {
+imageManager.imageFormat.setSepiaImage(imageSaver.imageFormat.dirPath + imageManager.nameManager.getFormatedName(imageName), imageManager.nameManager.getFilteredName(imageName), function (err, data) {
 	// your callback
 });
 ```
